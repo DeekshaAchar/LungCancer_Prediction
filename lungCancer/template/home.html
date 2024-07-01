@@ -1,0 +1,96 @@
+
+{% load static %}
+<html>
+    <head>
+        <title>
+            Health information
+        </title>
+        <link href="{% static 'bootstrap.min.css'%}"
+        type="text/css" rel="stylesheet"/>
+        <style>
+              body {
+            background-color: lightpink; 
+            }
+            .form-group{
+                margin-bottom: 20px;
+                margin-right: 15px;
+                padding-inline-end: 1px;
+              
+            }
+           .custom-button{
+                font-size: 20px; 
+                padding: 10px 20px; 
+                width: 150px;
+           }
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <h1>Patient Details</h1>
+                    <form action="/CheckDisease/" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="form-group">
+                                <input type="text" id="Gender" class="form-group form-control" placeholder="Gender(male-1,female-0)" size="25" name="Gender"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="Age" class="form-group form-control" placeholder="Age" size="26" name="Age"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="Smoking" class="form-group form-control" placeholder="Smoking(Yes-2,No-1)" size="25" name="Smoking"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="YellowFingers" class="form-group form-control" placeholder="YellowFingers(Yes-2,No-1)" size="26" name="YellowFingers"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="Anxiety" class="form-group form-control" placeholder="Anxiety(Yes-2,No-1)" size="25" name="Anxiety"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="Peer_Pressure" class="form-group form-control" placeholder="Peer_Pressure(Yes-2,No-1)" size="26" name="Peer_Pressure"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="Chronic_Disease" class="form-group form-control" placeholder="Chronic_Disease(Yes-2,No-1)" size="25" name="Chronic_Disease"/>
+                            </div>
+                        
+                       
+                            <div class="form-group">
+                                <input type="text" id="Fatigue" class="form-group form-control" placeholder="Fatigue(Yes-2,No-1)" size="26" name="Fatigue"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="Allergy" class="form-group form-control" placeholder="Allergy(Yes-2,No-1)" size="25" name="Allergy"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="Wheezing" class="form-group form-control" placeholder="Wheezing(Yes-2,No-1)" size="26" name="Wheezing"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="Alcohol_Consuming" class="form-group form-control" placeholder="Alcohol_Consuming(Yes-2,No-1)" size="25" name="Alcohol_Consuming"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="Coughing" class="form-group form-control" placeholder="Coughing(Yes-2,No-1)" size="26" name="Coughing"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="Shortness_of_Breath" class="form-group form-control" placeholder="Shortness_of_Breath(Yes-2,No-1)" size="25" name="Shortness_of_Breath"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="Swallowing_Difficulty" class="form-group form-control" placeholder="Swallowing_Difficulty(Yes-2,No-1)" size="26" name="Swallowing_Difficulty"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="Chest_Pain" class="form-group form-control" placeholder="Chest_Pain(Yes-2,No-1)" size="25" name="Chest_Pain"/>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary custom-button" type="submit">
+                            Predict
+                        </button>
+                    </form>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+    </body>
+</html>
+            

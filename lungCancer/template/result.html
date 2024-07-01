@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+    <head>
+        <title>
+            Result Page
+        </title>
+        <link href="{% static 'bootstrap.min.css'%}"
+        type="text/css" rel="stylesheet"/>
+
+    </head>
+    <body>
+        <h1 style="margin-top: 50px;margin-left: 20px;">Health Profile</h1>
+        <div class="container">
+            <div class="card" style="width: 110%;height: 100px;margin-top: 100px;border: 2px solid #3498db;border-radius: 10px;">
+                {% if result == "Based on our analysis, the patient has been diagnosed with Lung Cancer." %}
+                    <h1 class="text-danger">{{ result }}</h1>
+                {% endif %}
+                {% if result == "Good news! The patient is normal and healthy." %}
+                    <h1 class="text-success">{{ result }}</h1>
+                {% endif %}
+            </div>
+           
+        </div>
+    </body>
+</html>
